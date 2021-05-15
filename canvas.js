@@ -187,18 +187,19 @@ function  drawHand(c, angle, length, width,){
 function darwTime(c,r){
     
     //now we need to find the current time
-    
+    //we get each component
     var now = new Date();
     var hour = now.getHours();
     var minute = now.getMinutes();
     var second = now.getSeconds();
     hour = hour%12
     
-
+    //finding the angles at any time
     var hourAngleMade = hour*Math.PI/6 + minute*Math.PI/360 + second*Math.PI/(6*3600);
     var minuteAngleMade = minute*Math.PI/30 + second*Math.PI/30/60;
     var secondAngleMade = second*Math.PI/30;
     console.log(hourAngleMade, minuteAngleMade, secondAngleMade);
+    //draw each hand
     drawHand(c,hourAngleMade, hl,hw );
     drawHand(c,minuteAngleMade, ml,mw );
     drawHand(c,secondAngleMade, sl,sw );
